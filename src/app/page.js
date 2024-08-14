@@ -72,22 +72,22 @@ export default function Home() {
               <div className="col-lg-8">
                 <div className="row gx-5 row-cols-1 row-cols-md-2">
                   <div className="col mb-5 h-100">
-                    <div className="bg-primary text-white rounded-3 mb-3 p-1"><i className="material-icons">collections</i></div>
+                    <span className="material-icons bg-primary text-white rounded-3 mb-3 p-2">collections</span>
                     <h2 className="h5">Featured title</h2>
                     <p className="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
                   </div>
                   <div className="col mb-5 h-100">
-                  <div className="bg-primary text-white rounded-3 mb-3 p-1"><i className="material-icons">business</i></div>
+                  <span className="material-icons bg-primary text-white rounded-3 mb-3 p-2">business</span>
                     <h2 className="h5">Featured title</h2>
                     <p className="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
                   </div>
                   <div className="col mb-5 mb-md-0 h-100">
-                  <div className="bg-primary text-white rounded-3 mb-3 p-1"><i className="material-icons">toggle_on</i></div>
+                    <span className="material-icons bg-primary text-white rounded-3 mb-3 p-2">toggle_on</span>
                     <h2 className="h5">Featured title</h2>
                     <p className="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
                   </div>
                   <div className="col h-100">
-                  <div className="bg-primary text-white rounded-3 mb-3 p-1"><i className="material-icons">toggle_on</i></div>
+                    <span className="material-icons bg-primary text-white rounded-3 mb-3 p-2">toggle_on</span>
                     <h2 className="h5">Featured title</h2>
                     <p className="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
                   </div>
