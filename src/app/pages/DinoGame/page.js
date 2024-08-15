@@ -3,10 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 const DinoGame = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [showQuestion, setShowQuestion] = useState(false);
-  const [score, setScore] = useState(0);
-  const [questions, setQuestions] = useState([
+  const backQuestions = [
     {
       text: "¿Qué es lo más importante para alcanzar el éxito según Yokoi Kenji?",
       options: ["Disciplina", "Suerte", "Conexiones", "Dinero"],
@@ -107,7 +104,12 @@ const DinoGame = () => {
       options: ["Que todos son ricos", "Que todos son educados", "Que todos son saludables", "Que todos son pacíficos"],
       correctAnswer: "Que todos son ricos",
     },
-  ]);
+  ];
+
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [showQuestion, setShowQuestion] = useState(false);
+  const [score, setScore] = useState(0);
+  const [questions, setQuestions] = useState(backQuestions);
 
   const [currentQuestion, setCurrentQuestion] = useState(null);
 
@@ -231,26 +233,25 @@ const DinoGame = () => {
     setScore(0);
     setIsPlaying(true);
     setShowQuestion(false);
-    setQuestions([
-      // Repopulate the questions array with the original 20 questions
-      // (use the same list of questions from above)
-    ]);
+    setQuestions(backQuestions);
   };
 
   return (
     <div className='container'>
       <h1 className='fw-bolder'>¡Esquiva los obstáculos!</h1>
       <p>Pica dentro del espacio del juego, o usa la barra de espacio para saltar</p>
-      <canvas ref={canvasRef} width={400} height={200} style={{ border: '1px solid black' }} />
-      <p>Puntuación: {score}</p>
+      <canvas ref={canvasRef} width={400} height={200} />
+      <div>
+        <p className='badge text-bg-info'>Puntuación: {score}</p>
+      </div>
 
       {showQuestion ? (
         currentQuestion ? (
           <div>
             <h2>{currentQuestion.text}</h2>
-            <div className='row gx-5 row-cols-1 row-cols-md-2 justify-content-between'>
+            <div className='d-grid gap-1 d-sm-flex justify-content-sm-center justify-content-xl-start'>
               {currentQuestion.options.map((option, index) => (
-                <button className='btn btn-primary col mb-5 h-100' key={index} onClick={() => handleAnswer(option)}>
+                <button className='btn btn-primary col mt-4' key={index} onClick={() => handleAnswer(option)}>
                   {option}
                 </button>
               ))}
