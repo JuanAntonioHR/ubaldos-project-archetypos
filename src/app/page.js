@@ -1,60 +1,30 @@
 import Image from 'next/image';
+import Carrusel from './components/Carrusel';
+import ButtonNav from './components/ButtonNav';
 
 export default function Home() {
   return (
     <div className="d-flex flex-column h-100">
       <main className="flex-shrink-0">
-        {/* Navigation */}
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div className="container px-5">
-            <a className="navbar-brand" href="/">Start Bootstrap</a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item"><a className="nav-link" href="/">Home</a></li>
-                <li className="nav-item"><a className="nav-link" href="/about">About</a></li>
-                <li className="nav-item"><a className="nav-link" href="/contact">Contact</a></li>
-                <li className="nav-item"><a className="nav-link" href="/pricing">Pricing</a></li>
-                <li className="nav-item"><a className="nav-link" href="/faq">FAQ</a></li>
-                <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
-                  <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                    <li><a className="dropdown-item" href="/blog-home">Blog Home</a></li>
-                    <li><a className="dropdown-item" href="/blog-post">Blog Post</a></li>
-                  </ul>
-                </li>
-                <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
-                  <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                    <li><a className="dropdown-item" href="/portfolio-overview">Portfolio Overview</a></li>
-                    <li><a className="dropdown-item" href="/portfolio-item">Portfolio Item</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-
         {/* Header */}
         <header className="bg-dark py-5">
           <div className="container px-5">
             <div className="row gx-5 align-items-center justify-content-center">
               <div className="col-lg-8 col-xl-7 col-xxl-6">
                 <div className="my-5 text-center text-xl-start">
-                  <h1 className="display-5 fw-bolder text-white mb-2">A Bootstrap 5 template for modern businesses</h1>
-                  <p className="lead fw-normal text-white-50 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!</p>
+                  <h1 className="display-5 fw-bolder text-white mb-2">Conferencias Inspiradoras</h1>
+                  <p className="lead fw-normal text-white-50 mb-4">Aprende de las experiencias y enseñanzas compartidas por Carlos Kasuga y Yokoi Kenji sobre la importancia de la calidad, la disciplina y los valores.</p>
                   <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                    <a className="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
-                    <a className="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
+                    <a className="btn btn-primary btn-lg px-4 me-sm-3" href="#carlos">Carlos Kasuga</a>
+                    <a className="btn btn-warning btn-lg px-4 me-sm-3" href="#yokoi">Yokoi Kenji</a>
+                    <ButtonNav />
                   </div>
                 </div>
               </div>
               <div className="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
                 <Image
-                  src="https://dummyimage.com/600x400/343a40/6c757d"
-                  alt="..."
+                  src='/hero.png'
+                  alt="Conferencia"
                   width={600}
                   height={400}
                   className="img-fluid rounded-3 my-5"
@@ -65,31 +35,41 @@ export default function Home() {
         </header>
 
         {/* Features section */}
-        <section className="py-5" id="features">
+        <section className="py-5" id="carlos">
           <div className="container px-5 my-5">
             <div className="row gx-5">
-              <div className="col-lg-4 mb-5 mb-lg-0"><h2 className="fw-bolder mb-0">A better way to start building.</h2></div>
+              <div className="col-lg-4 mb-5 mb-lg-0">
+                <h2 className="fw-bolder">Conferencia de Calidad</h2>
+                <h3 className='mb-0'>Carlos Kasuga</h3>
+                <Image
+                  src="https://sanluispotosi.quadratin.com.mx/www/wp-content/uploads/2020/07/WhatsApp-Image-2020-07-17-at-8.29.01-PM.jpeg"
+                  alt="Carlos Kasuga"
+                  width={300}
+                  height={300}
+                  className="img-fluid rounded-3 my-5"
+                />
+              </div>
               <div className="col-lg-8">
                 <div className="row gx-5 row-cols-1 row-cols-md-2">
                   <div className="col mb-5 h-100">
-                    <span className="material-icons bg-primary text-white rounded-3 mb-3 p-2">collections</span>
-                    <h2 className="h5">Featured title</h2>
-                    <p className="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                    <span className="material-icons bg-primary text-white rounded-3 mb-3 p-2">star</span>
+                    <h2 className="h5">Calidad y Éxito</h2>
+                    <p className="mb-0">Carlos Kasuga enfatiza la importancia de la calidad en todos los aspectos de la vida, tanto personal como profesional. La clave del éxito, según él, reside en la dedicación, la responsabilidad, y la mejora continua.</p>
                   </div>
                   <div className="col mb-5 h-100">
-                  <span className="material-icons bg-primary text-white rounded-3 mb-3 p-2">business</span>
-                    <h2 className="h5">Featured title</h2>
-                    <p className="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                    <span className="material-icons bg-primary text-white rounded-3 mb-3 p-2">group</span>
+                    <h2 className="h5">Valores y Disciplina</h2>
+                    <p className="mb-0">La conferencia destaca cómo los valores y la disciplina son fundamentales para construir una sociedad justa y próspera, basándose en el ejemplo de la cultura japonesa.</p>
                   </div>
                   <div className="col mb-5 mb-md-0 h-100">
-                    <span className="material-icons bg-primary text-white rounded-3 mb-3 p-2">toggle_on</span>
-                    <h2 className="h5">Featured title</h2>
-                    <p className="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                    <span className="material-icons bg-primary text-white rounded-3 mb-3 p-2">history_edu</span>
+                    <h2 className="h5">Educación y Familia</h2>
+                    <p className="mb-0">Kasuga comparte cómo la educación en valores desde la infancia, promovida en el hogar y la escuela, es esencial para formar individuos responsables y comprometidos.</p>
                   </div>
                   <div className="col h-100">
-                    <span className="material-icons bg-primary text-white rounded-3 mb-3 p-2">toggle_on</span>
-                    <h2 className="h5">Featured title</h2>
-                    <p className="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                    <span className="material-icons bg-primary text-white rounded-3 mb-3 p-2">business_center</span>
+                    <h2 className="h5">Gestión Empresarial</h2>
+                    <p className="mb-0">Desde su experiencia como empresario, Kasuga subraya que una gestión basada en principios éticos no solo es posible, sino también rentable a largo plazo.</p>
                   </div>
                 </div>
               </div>
@@ -97,41 +77,20 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Testimonial section */}
-        <div className="py-5 bg-light">
-          <div className="container px-5 my-5">
-            <div className="row gx-5 justify-content-center">
-              <div className="col-lg-10 col-xl-7">
-                <div className="text-center">
-                  <div className="fs-4 mb-4 fst-italic">Working with Start Bootstrap templates has saved me tons of development time when building new projects! Starting with a Bootstrap template just makes things easier!</div>
-                  <div className="d-flex align-items-center justify-content-center">
-                    <Image 
-                      src="https://dummyimage.com/80x80/343a40/6c757d"
-                      alt="..."
-                      width={80}
-                      height={80}
-                      className="rounded-circle"
-                    />
-                    <div className="fw-bold">
-                      Tom Ato
-                      <span className="fw-bold text-primary mx-1">/</span>
-                      CEO, Pomodoro
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Blog preview section */}
-        <section className="py-5">
+        
+        {/* Yokoi Kenji section */}
+        <section className="py-5 bg-light" id="yokoi">
           <div className="container px-5 my-5">
             <div className="row gx-5 justify-content-center">
               <div className="col-lg-8 col-xl-6">
                 <div className="text-center">
-                  <h2 className="fw-bolder">From our blog</h2>
-                  <p className="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+                  <h2 className="fw-bolder">Disciplina y Mitos sobre Japón</h2>
+                  <h3 className="mb-4">Yokoi Kenji</h3>
+                  <p className="lead fw-normal text-muted mb-5">
+                    Yokoi Kenji, a través de su conferencia, nos invita a reflexionar
+                    sobre la verdadera esencia de la disciplina y desmonta varios mitos
+                    sobre Japón y su cultura.
+                  </p>
                 </div>
               </div>
             </div>
@@ -139,119 +98,136 @@ export default function Home() {
               <div className="col-lg-4 mb-5">
                 <div className="card h-100 shadow border-0">
                   <Image
-                    src="https://dummyimage.com/600x350/ced4da/6c757d"
-                    alt="..."
-                    width={600}
-                    height={350}
+                    src="https://i.blogs.es/ce63ca/tegan-mierle-ioyeitud2g8-unsplash/1366_2000.webp"
+                    alt="Disciplina"
+                    width={250}
+                    height={250}
                     className="card-img-top"
                   />
                   <div className="card-body p-4">
-                    <div className="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
-                    <a className="text-decoration-none link-dark stretched-link" href="#!"><h5 className="card-title mb-3">Blog post title</h5></a>
-                    <p className="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-                  </div>
-                  <div className="card-footer p-4 pt-0 bg-transparent border-top-0">
-                    <div className="d-flex align-items-end justify-content-between">
-                      <div className="d-flex align-items-center">
-                        <Image
-                          src="https://dummyimage.com/40x40/ced4da/6c757d"
-                          alt="..."
-                          width={40}
-                          height={40}
-                          className="rounded-circle me-3"
-                        />
-                        <div className="small">
-                          <div className="fw-bold">Machiavelli</div>
-                          <div className="text-muted">March 12, 2024 &middot; 6 min read</div>
-                        </div>
-                      </div>
-                    </div>
+                    <div className="badge bg-primary bg-gradient rounded-pill mb-2">Disciplina</div>
+                    <h5 className="card-title mb-3">La Clave del Éxito</h5>
+                    <p className="card-text mb-0">
+                      Kenji enfatiza que la verdadera disciplina va más allá de seguir reglas; 
+                      es un compromiso constante con la mejora personal y profesional. La disciplina 
+                      es el pilar que sostiene el crecimiento y el éxito a largo plazo.
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="col-lg-4 mb-5">
                 <div className="card h-100 shadow border-0">
                   <Image
-                    src="https://dummyimage.com/600x350/adb5bd/495057"
-                    alt="..."
-                    width={600}
+                    src="https://images-na.ssl-images-amazon.com/images/S/amzn-author-media-prod/s301geeq35icovn5a939tg2rsg.jpg"
+                    alt="Mitos"
+                    width={350}
                     height={350}
                     className="card-img-top"
                   />
                   <div className="card-body p-4">
-                    <div className="badge bg-primary bg-gradient rounded-pill mb-2">Media</div>
-                    <a className="text-decoration-none link-dark stretched-link" href="#!"><h5 className="card-title mb-3">Another blog post title</h5></a>
-                    <p className="card-text mb-0">This text is a bit longer to illustrate the adaptive height of each card in a card group.</p>
-                  </div>
-                  <div className="card-footer p-4 pt-0 bg-transparent border-top-0">
-                    <div className="d-flex align-items-end justify-content-between">
-                      <div className="d-flex align-items-center">
-                        <Image
-                          src="https://dummyimage.com/40x40/ced4da/6c757d"
-                          alt="..."
-                          width={40}
-                          height={40}
-                          className="rounded-circle me-3"
-                        />
-                        <div className="small">
-                          <div className="fw-bold">John Doe</div>
-                          <div className="text-muted">March 23, 2024 &middot; 4 min read</div>
-                        </div>
-                      </div>
-                    </div>
+                    <div className="badge bg-primary bg-gradient rounded-pill mb-2">Cultura</div>
+                    <h5 className="card-title mb-3">Desmontando Mitos</h5>
+                    <p className="card-text mb-0">
+                      En su charla, Kenji aborda y desmiente varios mitos comunes sobre Japón, 
+                      como la idea de que los japoneses son naturalmente disciplinados. Explica 
+                      que esta disciplina es una construcción social, no una característica innata.
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="col-lg-4 mb-5">
                 <div className="card h-100 shadow border-0">
                   <Image
-                    src="https://dummyimage.com/600x350/6c757d/343a40"
-                    alt="..."
-                    width={600}
-                    height={350}
+                    src="https://www.caritas.org.mx/wp-content/uploads/2021/11/valores-universales-1024x768.jpg"
+                    alt="Éxito"
+                    width={300}
+                    height={300}
                     className="card-img-top"
                   />
                   <div className="card-body p-4">
-                    <div className="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
-                    <a className="text-decoration-none link-dark stretched-link" href="#!"><h5 className="card-title mb-3">The last blog post title is a little bit longer than the others</h5></a>
-                    <p className="card-text mb-0">Some more quick example text to build on the card title and make up the bulk of the cards content.</p>
-                  </div>
-                  <div className="card-footer p-4 pt-0 bg-transparent border-top-0">
-                    <div className="d-flex align-items-end justify-content-between">
-                      <div className="d-flex align-items-center">
-                        <Image
-                          src="https://dummyimage.com/40x40/ced4da/6c757d"
-                          alt="..."
-                          width={40}
-                          height={40}
-                          className="rounded-circle me-3"
-                        />
-                        <div className="small">
-                          <div className="fw-bold">Jane Doe</div>
-                          <div className="text-muted">April 2, 2024 &middot; 10 min read</div>
-                        </div>
-                      </div>
-                    </div>
+                    <div className="badge bg-primary bg-gradient rounded-pill mb-2">Valores</div>
+                    <h5 className="card-title mb-3">Valores Universales</h5>
+                    <p className="card-text mb-0">
+                      Kenji subraya que valores como el respeto, la honestidad y la disciplina 
+                      son universales y esenciales para el progreso en cualquier cultura. Estos 
+                      valores son la base de una sociedad próspera.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
+
+        {/* Carousel section */}
+        <section className="py-5" id="carousel-section">
+          <div className="container px-5 my-5">
+            <div id="carouselExampleIndicators" className="carousel slide">
+              <div className="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <Image
+                    src="https://i0.wp.com/www.periodismo.com/wp-content/subid/trabajo-duro.jpeg"
+                    alt="Trabajo Duro"
+                    width={1000}
+                    height={600}
+                    className="d-block w-100"
+                  />
+                  <div className="carousel-caption d-none d-md-block">
+                    <h5>Trabajo Duro</h5>
+                    <p>El éxito no es casualidad. Kenji resalta que detrás de cada logro existe un esfuerzo arduo y constante.</p>
+                  </div>
+                </div>
+                <div className="carousel-item">
+                  <Image
+                    src="https://mapsicologos.com/wp-content/uploads/2020/05/cambio.jpg"
+                    alt="Adaptación"
+                    width={1200}
+                    height={600}
+                    className="d-block w-100"
+                  />
+                  <div className="carousel-caption d-none d-md-block">
+                    <h5>Adaptación y Resiliencia</h5>
+                    <p>Kenji nos enseña que la adaptabilidad es clave en un mundo cambiante. Saber adaptarse es una forma de inteligencia.</p>
+                  </div>
+                </div>
+                <div className="carousel-item">
+                  <Image
+                    src="https://media.semprefamilia.com.br/semprefamilia/2015/11/bigstock-family-and-friends-sitting-at-95387342-80fb83e4.jpg"
+                    alt="Unidad Familiar"
+                    width={1200}
+                    height={600}
+                    className="d-block w-100"
+                  />
+                  <div className="carousel-caption d-none d-md-block">
+                    <h5>Unidad Familiar</h5>
+                    <p>La familia es el núcleo de la sociedad. Kenji destaca la importancia de mantener la unidad y el apoyo mutuo.</p>
+                  </div>
+                </div>
+              </div>
+              <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <Carrusel />
       </main>
 
       {/* Footer */}
       <footer className="bg-dark py-4 mt-auto">
         <div className="container px-5">
           <div className="row align-items-center justify-content-between flex-column flex-sm-row">
-            <div className="col-auto"><div className="small m-0 text-white">Copyright &copy; Your Website 2024</div></div>
-            <div className="col-auto">
-              <a className="link-light small" href="#!">Privacy</a>
-              <span className="text-white mx-1">&middot;</span>
-              <a className="link-light small" href="#!">Terms</a>
-              <span className="text-white mx-1">&middot;</span>
-              <a className="link-light small" href="#!">Contact</a>
-            </div>
+            <div className="col-auto"><div className="small m-0 text-white">Copyright &copy; Juan Antonio Herrera de la Rosa 2024</div></div>
           </div>
         </div>
       </footer>
