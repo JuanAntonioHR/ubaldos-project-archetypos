@@ -5,106 +5,107 @@ import { useEffect, useRef, useState } from 'react';
 const DinoGame = () => {
   const backQuestions = [
     {
-      text: "¿Qué es lo más importante para alcanzar el éxito según Yokoi Kenji?",
-      options: ["Disciplina", "Suerte", "Conexiones", "Dinero"],
-      correctAnswer: "Disciplina",
+      text: "¿Qué efecto puede tener una intervención excesiva en un sistema lento según el arquetipo 'Compensación entre Proceso y Demora'?",
+      options: ["Produce estabilidad", "Genera inestabilidad", "Mejora la rapidez", "Elimina la demora"],
+      correctAnswer: "Genera inestabilidad",
     },
     {
-      text: "¿Qué mito sobre Japón desmiente Yokoi Kenji?",
-      options: ["Que todos son ricos", "Que todos practican artes marciales", "Que todos son buenos en matemáticas", "Que no hay delincuencia"],
-      correctAnswer: "Que no hay delincuencia",
+      text: "¿Qué representa el 'límite' en el arquetipo 'Límites del Crecimiento'?",
+      options: ["Una restricción de recursos", "Un aumento en la demanda", "Una ventaja competitiva", "Un cambio en el mercado"],
+      correctAnswer: "Una restricción de recursos",
     },
     {
-      text: "Según Carlos Kasuga, ¿cuál es la clave para la calidad de vida?",
-      options: ["Ahorro", "Disciplina", "Educación", "Trabajo en equipo"],
-      correctAnswer: "Educación",
+      text: "¿Qué sucede cuando se usa una solución de corto plazo en el arquetipo 'Desplazamiento de la Carga'?",
+      options: ["El problema se resuelve permanentemente", "La dependencia de la solución aumenta", "La solución fundamental mejora", "La carga se elimina"],
+      correctAnswer: "La dependencia de la solución aumenta",
     },
     {
-      text: "¿Qué aspecto cultural japonés destaca Carlos Kasuga?",
-      options: ["Respeto", "Tecnología", "Moda", "Arte"],
-      correctAnswer: "Respeto",
+      text: "En el arquetipo 'Desplazamiento de la Carga hacia la Intervención', ¿qué es esencial para evitar la dependencia?",
+      options: ["Intervención constante", "Capacitación interna", "Recursos externos ilimitados", "Incremento de la carga"],
+      correctAnswer: "Capacitación interna",
     },
     {
-      text: "¿Qué representa la disciplina para Yokoi Kenji?",
-      options: ["Cumplir reglas estrictas", "Un compromiso constante", "Evitar errores", "Seguir órdenes"],
-      correctAnswer: "Un compromiso constante",
+      text: "¿Qué implica el arquetipo 'Erosión de Metas' para los objetivos a largo plazo?",
+      options: ["Los mejora", "Los mantiene", "Los degrada", "Los elimina"],
+      correctAnswer: "Los degrada",
     },
     {
-      text: "¿Cuál es una creencia errónea sobre Japón mencionada por Yokoi Kenji?",
-      options: ["Que todos son inteligentes", "Que todos son felices", "Que todos son trabajadores", "Que todos son ricos"],
-      correctAnswer: "Que todos son felices",
+      text: "¿Cómo se describe el ciclo competitivo en el arquetipo 'Escalada'?",
+      options: ["Colaborativo", "Destructivo", "Inofensivo", "Eficiente"],
+      correctAnswer: "Destructivo",
     },
     {
-      text: "Según Carlos Kasuga, ¿qué deben aprender los países latinoamericanos de Japón?",
-      options: ["La puntualidad", "La tecnología", "La moda", "El idioma"],
-      correctAnswer: "La puntualidad",
+      text: "En el arquetipo 'Éxito para quien tiene Éxito', ¿qué ocurre cuando un grupo tiene éxito inicial?",
+      options: ["Recibe menos apoyo", "Atrae más recursos", "Pierde importancia", "Mejora al grupo opuesto"],
+      correctAnswer: "Atrae más recursos",
     },
     {
-      text: "¿Qué sugiere Carlos Kasuga para mejorar la calidad de vida?",
-      options: ["Mejorar la educación", "Trabajar más horas", "Invertir en tecnología", "Aumentar la producción"],
-      correctAnswer: "Mejorar la educación",
+      text: "¿Cuál es un síntoma del arquetipo 'Tragedia del Terreno Común'?",
+      options: ["Abundancia de recursos", "Uso sostenible del recurso", "Disminución del recurso compartido", "Mejor distribución del recurso"],
+      correctAnswer: "Disminución del recurso compartido",
     },
     {
-      text: "¿Qué elemento considera esencial Yokoi Kenji para el progreso personal?",
-      options: ["Motivación", "Disciplina", "Suerte", "Oportunidades"],
-      correctAnswer: "Disciplina",
+      text: "¿Qué tipo de soluciones genera problemas adicionales en el arquetipo 'Soluciones Rápidas que Fallan'?",
+      options: ["Soluciones estructurales", "Soluciones de largo plazo", "Soluciones de corto plazo", "Soluciones fundamentadas"],
+      correctAnswer: "Soluciones de corto plazo",
     },
     {
-      text: "¿Qué mito cultural sobre Japón se menciona en la conferencia de Yokoi Kenji?",
-      options: ["Que no hay pobreza", "Que no hay desigualdad", "Que no hay corrupción", "Que no hay crimen"],
-      correctAnswer: "Que no hay crimen",
+      text: "¿Qué ocurre cuando no se invierte en capacidad según el arquetipo 'Crecimiento y Subinversión'?",
+      options: ["El crecimiento se detiene", "El crecimiento se acelera", "La capacidad aumenta", "La competencia desaparece"],
+      correctAnswer: "El crecimiento se detiene",
     },
     {
-      text: "¿Qué valor promueve Carlos Kasuga como fundamental?",
-      options: ["Honestidad", "Éxito", "Popularidad", "Riqueza"],
-      correctAnswer: "Honestidad",
+      text: "En el arquetipo 'Compensación entre Proceso y Demora', ¿qué debe evitarse para mantener estabilidad?",
+      options: ["Reacción lenta", "Acciones agresivas", "Medición de resultados", "Cambios menores"],
+      correctAnswer: "Acciones agresivas",
     },
     {
-      text: "¿Qué destaca Yokoi Kenji sobre el esfuerzo en Japón?",
-      options: ["Es constante", "Es intermitente", "Es solo en el trabajo", "Es en la escuela"],
-      correctAnswer: "Es constante",
+      text: "¿Qué fase suele preceder a la desaceleración en el arquetipo 'Límites del Crecimiento'?",
+      options: ["Fase de planificación", "Fase de estabilidad", "Fase de colapso", "Fase de crecimiento acelerado"],
+      correctAnswer: "Fase de crecimiento acelerado",
     },
     {
-      text: "¿Qué recomienda Carlos Kasuga para una vida equilibrada?",
-      options: ["Ahorrar", "Comer bien", "Descansar", "Trabajar mucho"],
-      correctAnswer: "Comer bien",
+      text: "En el arquetipo 'Desplazamiento de la Carga', ¿qué tipo de solución se usa comúnmente?",
+      options: ["Solución estructural", "Solución temporal", "Solución permanente", "Solución educacional"],
+      correctAnswer: "Solución temporal",
     },
     {
-      text: "¿Cuál es una de las claves del éxito según Yokoi Kenji?",
-      options: ["Tener suerte", "Trabajar duro", "Conocer a las personas adecuadas", "Viajar mucho"],
-      correctAnswer: "Trabajar duro",
+      text: "¿Qué indica el arquetipo 'Erosión de Metas' sobre los estándares durante una crisis?",
+      options: ["Se elevan", "Se eliminan", "Se rebajan", "Se mantienen iguales"],
+      correctAnswer: "Se rebajan",
     },
     {
-      text: "¿Qué práctica japonesa admira Carlos Kasuga?",
-      options: ["La meditación", "La puntualidad", "La tecnología", "El sushi"],
-      correctAnswer: "La puntualidad",
+      text: "¿Qué pueden hacer las partes en conflicto en el arquetipo 'Escalada' para evitar la destrucción mutua?",
+      options: ["Escalar aún más", "Retirarse de la competencia", "Buscar soluciones de ganar-ganar", "Aumentar la agresividad"],
+      correctAnswer: "Buscar soluciones de ganar-ganar",
     },
     {
-      text: "¿Qué concepto promueve Yokoi Kenji como esencial para la vida?",
-      options: ["Disciplina", "Suerte", "Fortuna", "Conexiones"],
-      correctAnswer: "Disciplina",
+      text: "¿Qué tipo de competencia se describe en 'Éxito para quien tiene Éxito'?",
+      options: ["Competencia destructiva", "Competencia sostenible", "Competencia por recursos limitados", "Competencia saludable"],
+      correctAnswer: "Competencia por recursos limitados",
     },
     {
-      text: "¿Qué valor considera Carlos Kasuga indispensable para el progreso?",
-      options: ["Respeto", "Ambición", "Fuerza", "Popularidad"],
-      correctAnswer: "Respeto",
+      text: "¿Cuál es una causa común del agotamiento de recursos en 'Tragedia del Terreno Común'?",
+      options: ["Uso consciente del recurso", "Consumo limitado", "Falta de regulación", "Redistribución del recurso"],
+      correctAnswer: "Falta de regulación",
     },
     {
-      text: "¿Qué mito cultural sobre Japón menciona Yokoi Kenji?",
-      options: ["Que todos son trabajadores", "Que todos son ricos", "Que todos son disciplinados", "Que todos son amables"],
-      correctAnswer: "Que todos son ricos",
+      text: "¿Qué sucede cuando se usa una solución rápida en 'Soluciones Rápidas que Fallan'?",
+      options: ["El problema se agrava a largo plazo", "El problema se resuelve permanentemente", "La solución es definitiva", "Se mejora el problema"],
+      correctAnswer: "El problema se agrava a largo plazo",
     },
     {
-      text: "¿Qué acción considera Carlos Kasuga clave para la mejora continua?",
-      options: ["Educarse", "Trabajar duro", "Ahorrar", "Innovar"],
-      correctAnswer: "Educarse",
+      text: "¿Qué se requiere para mantener el crecimiento en 'Crecimiento y Subinversión'?",
+      options: ["Limitar la inversión", "Incrementar la competencia", "Invertir en capacidad anticipadamente", "Disminuir la demanda"],
+      correctAnswer: "Invertir en capacidad anticipadamente",
     },
     {
-      text: "¿Qué mito sobre Japón menciona Yokoi Kenji?",
-      options: ["Que todos son ricos", "Que todos son educados", "Que todos son saludables", "Que todos son pacíficos"],
-      correctAnswer: "Que todos son ricos",
+      text: "En el arquetipo 'Compensación entre Proceso y Demora', ¿cuál es un ejemplo de sistema que reacciona lentamente?",
+      options: ["El mercado bursátil", "Un sistema de retroalimentación instantánea", "El clima", "Un grifo de agua caliente con demora"],
+      correctAnswer: "Un grifo de agua caliente con demora",
     },
   ];
+  
 
   const [isPlaying, setIsPlaying] = useState(true);
   const [showQuestion, setShowQuestion] = useState(false);
@@ -217,7 +218,7 @@ const DinoGame = () => {
       window.removeEventListener('keydown', handleKeyDown);
       canvas.removeEventListener('click', handleCanvasClick);
     };
-  }, [isPlaying]);
+  }, [isPlaying, questions]);
 
   const handleAnswer = (answer) => {
     if (answer === currentQuestion.correctAnswer) {
